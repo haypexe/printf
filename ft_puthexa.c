@@ -6,11 +6,11 @@
 /*   By: akehili <akehili@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 15:19:57 by akehili           #+#    #+#             */
-/*   Updated: 2024/11/21 15:19:59 by akehili          ###   ########.fr       */
+/*   Updated: 2024/11/26 16:53:35 by akehili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 void	ft_puthexa_non_formel(char n, int *count, unsigned int num)
 {
@@ -18,15 +18,15 @@ void	ft_puthexa_non_formel(char n, int *count, unsigned int num)
 
 	if (n == "x")
 	{
-		hex_digits = "0123456789abcdef"
+		hex_digits = "0123456789abcdef";
 	}
 	else if (n == "X")
 	{
-		hex_digits = "0123456789ABCDEF"
+		hex_digits = "0123456789ABCDEF";
 	}
 	if (n >= 16)
 	{
-		ft_puthexa_non_formel(num/16, count, n);
+		ft_puthexa_non_formel(num / 16, count, n);
 	}
 	ft_putchar(hex_digits[num % 16], count);
 }

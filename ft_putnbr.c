@@ -6,7 +6,7 @@
 /*   By: akehili <akehili@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 15:56:20 by akehili           #+#    #+#             */
-/*   Updated: 2024/11/21 15:17:42 by akehili          ###   ########.fr       */
+/*   Updated: 2024/11/26 16:49:07 by akehili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,5 @@ void	ft_putnbr(int nb, int *count)
 		ft_putnbr(num / 10, count);
 	}
 	ft_putchar(num % 10 + 48, count);
-		(*count)++;
+	(*count)++;
 }
