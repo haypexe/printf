@@ -1,39 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_sp.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akehili <akehili@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mmarhic <mmarhic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/14 15:56:20 by akehili           #+#    #+#             */
-/*   Updated: 2024/11/26 16:49:07 by akehili          ###   ########.fr       */
+/*   Created: 2024/10/22 15:26:15 by mmarhic           #+#    #+#             */
+/*   Updated: 2024/11/12 22:21:37 by mmarhic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putnbr(int nb, int *count)
+void	ft_putnbr_sp(int nb, int *count)
 {
-	unsigned int	num;
-
 	if (nb == -2147483648)
 	{
 		ft_putstr_sp("-2147483648", count);
 		return ;
 	}
-	if (nb < 0)
+	else if (nb < 0)
 	{
-		ft_putchar('-', count);
-		num = (unsigned int)(nb * -1);
+		ft_putchar_sp('-', count);
+		ft_putnbr_sp(-nb, count);
 	}
 	else
 	{
-		num = (unsigned int)nb;
+		if (nb > 9)
+			ft_putnbr_sp((nb / 10), count);
+		ft_putchar_sp(('0' + nb % 10), count);
 	}
-	if (num >= 10)
-	{
-		ft_putnbr(num / 10, count);
-	}
-	ft_putchar(num % 10 + 48, count);
-	(*count)++;
 }

@@ -3,36 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   ft_puthexa.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akehili <akehili@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mmarhic <mmarhic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/21 15:19:57 by akehili           #+#    #+#             */
-/*   Updated: 2024/11/26 16:53:35 by akehili          ###   ########.fr       */
+/*   Created: 2024/11/12 22:32:17 by mmarhic           #+#    #+#             */
+/*   Updated: 2024/11/29 16:38:25 by mmarhic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_puthexa_non_formel(char n, int *count, unsigned int num)
+static void	ft_puthexa_char(unsigned int num, int *count, char check)
 {
 	char	*hex_digits;
 
-	if (n == "x")
-	{
+	if (check == 'x')
 		hex_digits = "0123456789abcdef";
-	}
-	else if (n == "X")
-	{
+	else if (check == 'X')
 		hex_digits = "0123456789ABCDEF";
-	}
-	if (n >= 16)
-	{
-		ft_puthexa_non_formel(num / 16, count, n);
-	}
-	ft_putchar(hex_digits[num % 16], count);
+	if (num >= 16)
+		ft_puthexa_char(num / 16, count, check);
+	ft_putchar_sp(hex_digits[num % 16], count);
 }
 
-int	ft_puthexa(char n, int *count, unsigned int num)
+int	ft_puthexa(unsigned int num, int *count, char check)
 {
-	ft_puthexa_non_formel(n, count, num);
+	ft_puthexa_char(num, count, check);
 	return (*count);
 }

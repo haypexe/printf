@@ -3,20 +3,21 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: akehili <akehili@student.42.fr>            +#+  +:+       +#+         #
+#    By: mmarhic <mmarhic@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/11/26 16:33:22 by akehili           #+#    #+#              #
-#    Updated: 2024/11/26 16:38:00 by akehili          ###   ########.fr        #
+#    Created: 2024/10/22 17:21:41 by mmarhic           #+#    #+#              #
+#    Updated: 2024/11/12 22:16:03 by mmarhic          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+NAME = libftprintf.a
 
 SRC =		ft_printf.c \
-            ft_putchar.c \
-            ft_putnbr.c \
-            ft_putnbr_unsigned.c \
-            ft_putptr.c \
-            ft_putstr.c \
+            ft_putchar_sp.c \
+            ft_putnbr_sp.c \
+            ft_putnbr_unsigned_sp.c \
+            ft_putptr_sp.c \
+            ft_putstr_sp.c \
             ft_puthexa.c
 
 TEST_SRC = main.c

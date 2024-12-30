@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_unsigned.c                               :+:      :+:    :+:   */
+/*   ft_putstr_sp.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akehili <akehili@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mmarhic <mmarhic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/18 17:12:44 by akehili           #+#    #+#             */
-/*   Updated: 2024/11/26 16:50:10 by akehili          ###   ########.fr       */
+/*   Created: 2024/11/01 19:16:13 by mmarhic           #+#    #+#             */
+/*   Updated: 2024/11/29 16:56:47 by mmarhic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putnbr_unsigned(unsigned int nb, int *count)
+void	ft_putstr_sp(char *s, int *count)
 {
-	unsigned int	num;
+	int		i;
 
-	num = (unsigned int)nb;
-	if (num >= 10)
+	if (s == NULL)
+		s = "(null)";
+	i = 0;
+	while (s[i] != '\0')
 	{
-		ft_putnbr_unsigned(num / 10, count);
+		write(1, &s[i], 1);
+		(*count)++;
+		i++;
 	}
-	(*count)++;
-	ft_putchar(num % 10 + 48, count);
 }

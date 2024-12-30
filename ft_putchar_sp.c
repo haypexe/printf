@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_sp.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akehili <akehili@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mmarhic <mmarhic@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/14 15:54:57 by akehili           #+#    #+#             */
-/*   Updated: 2024/11/26 16:48:40 by akehili          ###   ########.fr       */
+/*   Created: 2024/11/01 17:58:10 by mmarhic           #+#    #+#             */
+/*   Updated: 2024/11/12 22:29:03 by mmarhic          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putchar(char c, int *count)
+void	ft_putchar_sp(char c, int *count)
 {
 	write(1, &c, 1);
 	(*count)++;
